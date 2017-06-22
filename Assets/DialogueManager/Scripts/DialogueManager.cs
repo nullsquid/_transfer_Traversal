@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour {
 
     }
     #endregion
-    
+    //variables for currentnode and currentstory
 
 	void GetRootStory(string rootStoryName){
 
