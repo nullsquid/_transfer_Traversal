@@ -23,13 +23,35 @@ public class DialogueManager : MonoBehaviour {
 
     }
     #endregion
-    // Use this for initialization
-    void Start () {
-		
+    
+
+	void GetRootStory(string rootStoryName){
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void GetNextStory(string nextStoryName){
+
 	}
+
+	void GetRootNode(){
+
+	}
+
+	void GetNextNode(string nextNodeName){
+
+	}
+
+	void ParseNode(){
+		StartCoroutine (ProcessNodeTags ());
+	}
+
+	IEnumerator ProcessNodeTags(){
+		yield return null;
+	}
+
+	static string GetNodePassage(){
+		return null;
+	}
+
+
 }
