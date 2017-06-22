@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Silk;
 public class DialogueManager : MonoBehaviour {
     #region Singleton
     private static DialogueManager _instance;
@@ -24,9 +24,11 @@ public class DialogueManager : MonoBehaviour {
     }
     #endregion
     //variables for currentnode and currentstory
+	SilkStory curStory;
+	SilkNode curNode;
 
 	void GetRootStory(string rootStoryName){
-
+		
 	}
 
 	void GetNextStory(string nextStoryName){
