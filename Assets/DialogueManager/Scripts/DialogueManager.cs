@@ -24,11 +24,16 @@ public class DialogueManager : MonoBehaviour {
     }
     #endregion
     //variables for currentnode and currentstory
+	SilkStory rootStory;
 	SilkStory curStory;
+	SilkNode rootNode;
 	SilkNode curNode;
 
+
+	#region Accessor Methods
 	void GetRootStory(string rootStoryName){
-		
+		rootStory = Silky.Instance.mother.GetStoryByName (rootStoryName);
+		curStory = rootStory;
 	}
 
 	void GetNextStory(string nextStoryName){
@@ -36,12 +41,19 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	void GetRootNode(){
-
+		rootNode = curStory.GetNodeByName ("Start");
+		curNode = rootNode;
 	}
 
 	void GetNextNode(string nextNodeName){
-
+		curNode = curStory.GetNodeByName (nextNodeName);
 	}
+		
+
+	static string GetNodePassage(){
+		return null;
+	}
+	#endregion
 
 	void ParseNode(){
 		StartCoroutine (ProcessNodeTags ());
@@ -50,10 +62,4 @@ public class DialogueManager : MonoBehaviour {
 	IEnumerator ProcessNodeTags(){
 		yield return null;
 	}
-
-	static string GetNodePassage(){
-		return null;
-	}
-
-
 }
