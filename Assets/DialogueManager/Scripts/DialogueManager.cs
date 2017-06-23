@@ -67,7 +67,15 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine (ProcessNodeTags ());
 	}
 
+	IEnumerator ExecuteNode(){
+		yield return null;
+	}
+
 	IEnumerator ProcessNodeTags(){
+		foreach (Silk.SilkTagBase tag in curNode.silkTags) {
+			//run each tag in sequence
+			//If it's an override tag, do that instead
+		}
 		yield return null;
 	}
 }
